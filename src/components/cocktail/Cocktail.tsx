@@ -1,5 +1,6 @@
 import React from 'react';
 import { ICocktail } from '../../interfaces/cocktail';
+import './Cocktail.css';
 
 const Cocktail: React.FunctionComponent<ICocktail> = (props: ICocktail) => {
   const { strDrink, strDrinkThumb, strInstructions } = props;
