@@ -2,6 +2,11 @@
   "name": "thecocktail",
   "version": "1.0.0",
   "description": "A front project to list cocktails",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve",
+    "watch": "webpack --watch"
+  },
   "author": "Jonathan Hidalgo Mora",
   "license": "ISC",
   "devDependencies": {
