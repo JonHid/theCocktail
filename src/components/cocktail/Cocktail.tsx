@@ -6,9 +6,11 @@ const Cocktail: React.FunctionComponent<ICocktail> = (props: ICocktail) => {
 
   return (
     <div className='cocktailContainer'>
-      <div className='cocktailName'>{ strDrink }</div>
-      <img className='cocktailImg' src={ strDrinkThumb } alt={ `${ strDrink }.img` } />
-      <div className='cocktailDescription' >{ strInstructions }</div>
+      <div className='cocktailHeader'>{ strDrink }</div>
+      <div className='cocktailBody'>
+        <img className='cocktailImg' src={ strDrinkThumb } alt={ `${ strDrink }.img` } />
+        <div className='cocktailDescription' >{ strInstructions }</div>
+      </div>
     </div>
   )
 };
