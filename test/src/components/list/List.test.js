@@ -15,30 +15,30 @@ jest.mock('../../../../src/components/cocktail/Cocktail', () => (props) => {
 
 describe('Testing App component...', () => {
   it('Rendering component...', async () => {
-    const cocktails = cocktailsMock.data.drinks;
-    const cocktail = cocktails[0];
-    getCocktails.mockResolvedValueOnce(cocktails);
+    const mockedCocktails = cocktailsMock.data.drinks;
+    const mockedCocktail = mockedCocktails[0];
+    getCocktails.mockResolvedValueOnce(mockedCocktails);
     let renderedListComponent;
     await act(async () => {
-      renderedListComponent = render(<List/>);
+      renderedListComponent = render(<List cocktails={ mockedCocktails } setCocktails={ () => {} }/>);
     });
 
     const renderedMockCocktails = renderedListComponent.queryAllByText((content, element) => {
       return element.tagName.toLowerCase() === 'mock-cocktail';
     });
 
-    expect(renderedMockCocktails.length).toEqual(cocktails.length);
-    expect(renderedMockCocktails[0].attributes.strDrinkThumb.value).toEqual(cocktail.strDrinkThumb);
-    expect(renderedMockCocktails[0].attributes.strDrink.value).toEqual(cocktail.strDrink);
-    expect(renderedMockCocktails[0].attributes.strInstructions.value).toEqual(cocktail.strInstructions);
+    expect(renderedMockCocktails.length).toEqual(mockedCocktails.length);
+    expect(renderedMockCocktails[0].attributes.strDrinkThumb.value).toEqual(mockedCocktail.strDrinkThumb);
+    expect(renderedMockCocktails[0].attributes.strDrink.value).toEqual(mockedCocktail.strDrink);
+    expect(renderedMockCocktails[0].attributes.strInstructions.value).toEqual(mockedCocktail.strInstructions);
   })
 
   it('getCocktails request fails...', async () => {
-    const cocktails = cocktailsMock.data.drinks;
+    const mockedCocktails = cocktailsMock.data.drinks;
     getCocktails.mockImplementation(() => { throw new Error() });
     let renderedListComponent;
     await act(async () => {
-      renderedListComponent = render(<List/>);
+      renderedListComponent = render(<List cocktails={ [] } setCocktails={ () => {} }/>);
     });
 
     const renderedMockCocktails = renderedListComponent.queryAllByText((content, element) => {
