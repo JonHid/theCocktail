@@ -9,5 +9,6 @@ async function getCocktails(): Promise<Array<ICocktail>> {
 }
 
 export {
-  getCocktails
+  getCocktails,
+  endpoint
 }
