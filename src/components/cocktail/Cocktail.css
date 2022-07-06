@@ -32,3 +32,15 @@
   width: 75%;
   margin: auto;
 }
+
+.iconContainer {
+  float: right;
+  position: relative;
+  top: 3pt;
+  right: 5pt;
+  cursor: pointer;
+}
+
+.like {
+  color: rgb(204, 55, 55);
+}
