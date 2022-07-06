@@ -13,8 +13,8 @@ const List: React.FunctionComponent = () => {
   useEffect(() => {
     (async () => {
       try {
-        const cocktails = await getCocktails();
-        setCocktails(cocktails);
+        const gettedCocktails = await getCocktails();
+        setCocktails(gettedCocktails);
       } catch (e) {
         console.error(e);
       }
