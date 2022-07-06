@@ -1,0 +1,13 @@
+.finderComponent {
+  display: flex;
+  justify-content: center;
+  margin: 10pt;
+}
+
+input {
+  width: 60%;
+}
+
+input:focus-visible {
+  outline-color: rgb(180, 143, 20);
+}
