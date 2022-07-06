@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { ICocktail } from '../../interfaces/cocktail';
 import { getCocktails } from '../../services/cocktail';
 import Cocktail from '../cocktail/Cocktail';
 
-interface ListState {
-  cocktails: Array<ICocktail>
+interface IListProps {
+  cocktails: Array<ICocktail>,
+  setCocktails: React.Dispatch<React.SetStateAction<Array<ICocktail>>>,
 }
 
-const List: React.FunctionComponent = () => {
-  const [ cocktails, setCocktails ] = useState<ListState['cocktails']>([]);
+const List: React.FunctionComponent<IListProps> = (props) => {
+  const { cocktails, setCocktails } = props;
 
   useEffect(() => {
     (async () => {
