@@ -13,7 +13,7 @@ jest.mock('../../../../src/components/cocktail/Cocktail', () => (props) => {
   return <MockCocktail { ...props }/>;
 });
 
-describe('Testing App component...', () => {
+describe('Testing List component...', () => {
   it('Rendering component...', async () => {
     const mockedCocktails = cocktailsMock.data.drinks;
     const mockedCocktail = mockedCocktails[0];
